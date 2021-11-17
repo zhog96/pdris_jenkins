@@ -11,12 +11,6 @@ node {
         sh 'mvn -f java/pom.xml test'
     }
     stage('allure') {
-        allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'taget/allure-results']]
-            ])
+        allure()
     }
 }
