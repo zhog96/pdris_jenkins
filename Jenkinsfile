@@ -2,11 +2,12 @@ node {
     stage('git clone') {
         git branch: 'main',
             url: 'https://github.com/zhog96/pdris_jenkins/'
+            
     }
     stage('build') {
-        echo 'build'
+        sh 'mvn clean validate compile'
     }
     stage('test') {
-        echo 'test'
+        sh 'mvn test'
     }
 }
