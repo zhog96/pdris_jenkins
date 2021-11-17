@@ -8,7 +8,7 @@ node {
         sh 'mvn -f java/pom.xml clean verify'
     }
     stage('test') {
-        sh 'mvn -f java/pom.xml test allure:report'
+        sh 'mvn -f java/pom.xml test'
     }
     stage('allure') {
         allure([
@@ -16,7 +16,7 @@ node {
                 jdk: '',
                 properties: [],
                 reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'java/taget/allure-results']]
+                results: [[path: 'taget/allure-results']]
             ])
     }
 }
