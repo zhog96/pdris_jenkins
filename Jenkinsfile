@@ -5,7 +5,7 @@ node {
             
     }
     stage('build') {
-        sh 'mvn clean validate compile'
+        sh 'mvn clean verify'
     }
     stage('test') {
         sh 'mvn test'
