@@ -10,4 +10,8 @@ node {
     stage('test') {
         sh 'mvn -f java/pom.xml test'
     }
+    stage('allure') {
+        allure([results: [[path: 'allure']]])
+        
+    }
 }
