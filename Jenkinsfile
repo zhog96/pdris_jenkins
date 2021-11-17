@@ -8,7 +8,7 @@ node {
         sh 'mvn -f java/pom.xml clean verify'
     }
     stage('test') {
-        sh 'mvn -f java/pom.xml test allure:serve'
+        sh 'mvn -f java/pom.xml test surefire-report:report'
     }
     stage('allure') {
         allure([results: [[path: 'allure']]])
