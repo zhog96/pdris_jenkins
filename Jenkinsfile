@@ -5,9 +5,9 @@ node {
             
     }
     stage('build') {
-        sh 'mvn -f java/pom.xml clean verify'
+        sh 'mvn -f java/pom.xml -X clean verify'
     }
     stage('test') {
-        sh 'mvn -f java/pom.xml test'
+        sh 'mvn -f java/pom.xml -X test'
     }
 }
