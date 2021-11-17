@@ -8,7 +8,7 @@ node {
         sh 'mvn -f java/pom.xml clean verify'
     }
     stage('test') {
-        sh 'mvn -f java/pom.xml test allure:report'
+        sh 'mvn -f java/pom.xml test'
     }
     stage('allure') {
         allure([
