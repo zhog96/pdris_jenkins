@@ -8,12 +8,12 @@ node {
         sh 'mvn -f java/pom.xml clean verify'
     }
     stage('test') {
-        sh 'mvn -f java/pom.xml test'
+        sh 'mvn -f java/pom.xml test sonar:sonar'
     }
     stage('sonar_qube') {
         def scannerHome = tool 'MySonar';
         withSonarQubeEnv('MySonar') {
-            sh "${scannerHome}/bin/sonar-scanner -X \
+            sh "${scannerHome}/bin/sonar-scanner \
             -Dsonar.projectKey=pipeline \
             -Dsonar.sources=java/src/main \
             -Dsonar.tests=java/src/test \
