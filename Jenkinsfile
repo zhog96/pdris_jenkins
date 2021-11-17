@@ -17,7 +17,7 @@ node {
             -Dsonar.projectKey=pipeline \
             -Dsonar.sources=java/src/main \
             -Dsonar.tests=java/src/test \
-            -Dsonar.java.binaries=target/classes \
+            -Dsonar.java.binaries=java/target/classes \
             -Dsonar.junit.reportPaths=java/target/surefire-reports" 
         }
     }
