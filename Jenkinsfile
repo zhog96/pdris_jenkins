@@ -19,7 +19,7 @@ node {
             -Dsonar.tests=java/src/test \
             -Dsonar.java.binaries=java/target/classes \
             -Dsonar.junit.reportPaths=java/target/surefire-reports \
-            -Dsonar.coverage.jacoco.xmlReportPaths=java/target/site/jacoco/jacoco.xml"" 
+            -Dsonar.coverage.jacoco.xmlReportPaths=java/target/site/jacoco/jacoco.xml"
         }
     }
     stage('allure') {
