@@ -1,0 +1,2 @@
+centos ansible_host={{host_a}} ansible_user={{user}} ansible_ssh_pass={{pass}} ansible_sudo_pass={{pass}}
+debian ansible_host={{host_b}} ansible_user={{user}} ansible_ssh_pass={{pass}} ansible_sudo_pass={{pass}}

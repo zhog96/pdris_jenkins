@@ -31,4 +31,9 @@ node {
                 results: [[path: 'java/target/allure-results']]
             ])
     }
+    stage('deploy') {
+        withCredentials([file(credentialsId: '.ansible_pass.txt', variable: 'VAULT_PASSWORD')]) {
+            sh 'ansible-playbook deploy/calculator.yml --vault-password-file $VAULT_PASSWORD -i deploy/servers.hosts'
+        }
+    }
 }
