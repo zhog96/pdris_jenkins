@@ -13,7 +13,7 @@ class MainTest {
     void main() {
         final ByteArrayOutputStream stream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(stream));
-        new Countdown(10).run();
+        Main.main(null);
         assertEquals("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n", stream.toString());
     }
 }
