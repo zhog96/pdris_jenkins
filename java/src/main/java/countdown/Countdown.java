@@ -1,3 +1,5 @@
+package countdown;
+
 public class Countdown {
     int size;
 
