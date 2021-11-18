@@ -33,7 +33,7 @@ node {
     }
     stage('deploy') {
         withCredentials([file(credentialsId: 'aazhogov_ansible_pass', variable: 'VAULT_PASSWORD')]) {
-            sh 'ansible-playbook deploy/calculator.yml --vault-password-file $VAULT_PASSWORD -i deploy/servers.hosts'
+            sh 'ansible-playbook deploy/playbook.yml --vault-password-file $VAULT_PASSWORD -i deploy/servers.hosts'
         }
     }
 }
