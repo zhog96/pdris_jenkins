@@ -8,7 +8,7 @@ node {
         sh 'mvn -f java/pom.xml clean verify'
     }
     stage('test') {
-        sh 'mvn -f java/pom.xml test sonar:sonar'
+        sh 'mvn -f java/pom.xml test'
     }
     stage('sonar_qube') {
         def scannerHome = tool 'MySonar';
